@@ -18,6 +18,30 @@ A Streamlit + Flask-powered intelligent assistant that helps you summarize, ask 
 
 ---
 
+## 📂 Project Structure
+
+```
+smart-research-assistant/
+│
+├── api.py                    # Flask API server
+├── app.py                    # Streamlit interface
+├── memory.json               # Q&A memory (auto-saved)
+├── requirements.txt          # Python dependencies
+├── README.md                 # Project info and usage
+│
+├── backend/
+│   ├── qa_engine.py
+│   ├── summarizer.py
+│   └── evaluator.py
+│
+├── utils/
+│   └── parser.py
+│
+└── Smart_Research_Assistant.postman_collection.json
+```
+
+---
+
 ## 🧠 Architecture Flow
 
 1. **User uploads a document** → parsed by `parser.py`
@@ -102,32 +126,8 @@ Example for `POST /ask`:
 
 ---
 
-## 📂 Project Structure
-
-```
-smart-research-assistant/
-│
-├── api.py                    # Flask API server
-├── app.py                    # Streamlit interface
-├── memory.json               # Q&A memory (auto-saved)
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project info and usage
-│
-├── backend/
-│   ├── qa_engine.py
-│   ├── summarizer.py
-│   └── evaluator.py
-│
-├── utils/
-│   └── parser.py
-│
-└── Smart_Research_Assistant.postman_collection.json
-```
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more info.
 
-    Built with ❤️ using Gemini + Streamlit By SIDDHARTH
+Built with ❤️ using Gemini + Streamlit By SIDDHARTH
