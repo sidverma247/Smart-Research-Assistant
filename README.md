@@ -1,41 +1,77 @@
+
 # 🧠 Smart Research Assistant (Gemini API Version)
 
 An AI-powered assistant that reads, summarizes, and intelligently interacts with research papers, legal docs, or manuals using the **Gemini 2.0 Flash API by Google**.
 
 ---
 
-## 🚀 Features
+## 🔧 Setup Instructions
 
-- 📄 Upload PDF or TXT documents
-- ✨ Generate automatic summaries (≤150 words)
-- ❓ Ask contextual questions with memory
-- 🧠 Challenge yourself with AI-generated questions
-- 💬 Justified answers with highlighted source snippets
-- 📤 Export Q&A to CSV or PDF
-- 🌐 Gemini API integration via HTTP (no LangChain/OpenAI)
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/yourname/smart-research-assistant.git
+cd smart-research-assistant
+```
 
 ---
 
-## 📁 Folder Structure
+### 2. Create and Activate a Virtual Environment
 
-smart-research-assistant/
-├── app.py # Streamlit app UI
-├── api.py # Optional FastAPI endpoint layer
-├── backend/
-│ ├── qa_engine.py # Gemini-powered Q&A logic
-│ ├── summarizer.py # Gemini summarization logic
-│ ├── evaluator.py # Evaluates your answers via Gemini
-├── utils/
-│ ├── parser.py # PDF/TXT parser
-│ ├── gemini.py # Gemini API HTTP integration
-│ ├── snippet_extractor.py # Extracts supporting document snippets
-├── memory.json # Stores Q&A memory
-├── requirements.txt # Dependencies
-├── .env # Your Gemini API key
-├── gemini-api.postman_collection.json ✅ Postman support
-└── README.md
+```bash
+python -m venv venv
+```
 
-## Setup Instructions
+Activate it:
 
-1. Clone the Repo : https://github.com/sidverma247/Smart-Research-Assistant
+- On macOS/Linux:
 
+```bash
+source venv/bin/activate
+```
+
+- On Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Get Your Gemini API Key
+
+- Visit: https://makersuite.google.com/app/apikey  
+- Log in with your Google account  
+- Click **"Create API Key"**  
+- Copy the key
+
+---
+
+### 5. Create a `.env` File in the Project Root
+
+Create a new file named `.env` and add this line:
+
+```env
+GEMINI_API_KEY=your_google_api_key_here
+```
+
+🔐 **Important**: Do **not** upload your `.env` file to GitHub!
+
+---
+
+### ▶️ Run the App
+
+```bash
+streamlit run app.py
+```
+
+Then open your browser and visit:  
+👉 http://localhost:8501
