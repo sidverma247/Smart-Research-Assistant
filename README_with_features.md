@@ -101,62 +101,70 @@ Then open your browser and visit:
 
 ---
 
-## 📮 Postman API Support
+📬 API Testing with Postman
+Easily test and explore the Smart Research Assistant API using Postman.
 
-This repo includes:
+🔧 Step-by-Step Instructions
+1. 📥 Import Postman Collection
+Download the collection file: Smart_Research_Assistant.postman_collection.json
 
-```
-gemini-api.postman_collection.json
-```
+Open Postman (desktop or web)
 
-### How to Use:
+Click on Import → Upload Files → select the .json file
 
-1. Import into Postman
-2. Create a new environment variable:
-   - Key: `GEMINI_API_KEY`
-   - Value: your actual Gemini API key
-3. Click "Send" to test `generateContent` endpoint
+Once imported, you'll see the full suite of testable API endpoints
 
-### Example Request Body
+2. ▶️ Start the Flask API Server
+Make sure your backend server is running on your local machine:
 
-```json
-{
-  "contents": [
-    {
-      "parts": [
-        {
-          "text": "Explain what generative AI is in one paragraph."
-        }
-      ]
-    }
-  ]
-}
-```
+bash
+Copy
+Edit
+python api.py
+This should output:
 
----
+nginx
+Copy
+Edit
+Running on http://127.0.0.1:5000
+All Postman requests will target this local server.
 
-### ✅ Output Sample
+3. 📡 Available API Endpoints in Postman
+Method	Endpoint	Description
+GET	/	Health check (returns "API is running")
+POST	/summarize	Summarizes the input text
+POST	/ask	Answers questions based on provided text
+POST	/generate-questions	Generates 3 MCQ-style questions
+POST	/evaluate-answer	Evaluates user’s answer vs correct one
+POST	/upload-file	Uploads a PDF or TXT file and extracts text
+POST	/paste-text	Submits pasted raw text to the system
+POST	/reset	Clears the current Q&A memory
+GET	/export-csv	Exports all memory Q&A to a .csv file
 
-```json
-{
-  "candidates": [
-    {
-      "content": {
-        "parts": [
-          {
-            "text": "Generative AI is a form of artificial intelligence that creates new content..."
-          }
-        ]
-      }
-    }
-  ]
-}
-```
+4. 🧪 Example Flow: Ask & Export
+Inside the Postman collection, you’ll find a pre-configured test folder:
 
----
+mathematica
+Copy
+Edit
+📁 Test Ask + Export CSV
+   ├─ Ask Then Export (POST /ask)
+   └─ Now Export CSV (GET /export-csv)
+Use this to simulate a real conversation and export history.
+
+5. ⚙️ Notes
+For all JSON-based requests (/summarize, /ask, etc.), make sure headers include:
+
+json
+Copy
+Edit
+"Content-Type": "application/json"
+For file upload (/upload-file), use form-data body and choose a valid .pdf or .txt file
+
+The backend stores conversation history in memory, so restart will reset it unless persiste
 
 ## 📬 Contact
 
 Feel free to connect if you have questions, ideas, or need help deploying this!
 
-Built with ❤️ using Gemini + Streamlit
+Built with ❤️ using Gemini + Streamlit By SIDDHARTH
