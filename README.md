@@ -18,6 +18,17 @@ A Streamlit + Flask-powered intelligent assistant that helps you summarize, ask 
 
 ---
 
+## 🧠 Architecture Flow
+
+1. **User uploads a document** → parsed by `parser.py`
+2. **Summary** generated via `summarizer.py` calling Gemini
+3. **Ask Anything** mode → uses `qa_engine.py` with memory and justification
+4. **Challenge Me** mode → generates 3 logic-based questions
+5. **Evaluation** → `evaluator.py` checks answers using Gemini API
+6. **Snippets** found by `snippet_extractor.py` to highlight exact justification
+
+---
+
 ## 🛠️ Setup Instructions
 
 ### 1. Clone the Repository
@@ -118,3 +129,5 @@ smart-research-assistant/
 ## 📄 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more info.
+
+    Built with ❤️ using Gemini + Streamlit By SIDDHARTH
