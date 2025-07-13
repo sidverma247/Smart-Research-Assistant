@@ -1,0 +1,144 @@
+{
+  "info": {
+    "name": "Smart Research Assistant",
+    "_postman_id": "f4a3bc93-2025-4d4c-9810-fake-id",
+    "description": "Postman collection for testing Smart Research Assistant API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "POST /summarize",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Artificial Intelligence allows machines to learn from data.\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/summarize",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5000",
+          "path": ["summarize"]
+        }
+      }
+    },
+    {
+      "name": "POST /ask",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"doc_text\": \"AI is the simulation of human intelligence in machines.\",\n  \"question\": \"What is AI?\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/ask",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5000",
+          "path": ["ask"]
+        }
+      }
+    },
+    {
+      "name": "POST /reset",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/reset",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5000",
+          "path": ["reset"]
+        }
+      }
+    },
+    {
+      "name": "POST /generate-questions",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Machine learning allows systems to learn from data and improve automatically.\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/generate-questions",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5000",
+          "path": ["generate-questions"]
+        }
+      }
+    },
+    {
+      "name": "POST /evaluate-answer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is machine learning?\",\n  \"user_answer\": \"It's a way to train AI\",\n  \"correct_answer\": \"Machine learning allows systems to learn from data and improve automatically.\",\n  \"doc_text\": \"Machine learning allows systems to learn from data and improve automatically.\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/evaluate-answer",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5000",
+          "path": ["evaluate-answer"]
+        }
+      }
+    }
+  ]
+}
