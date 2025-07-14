@@ -19,8 +19,9 @@ A Streamlit + Flask-powered intelligent assistant that helps you summarize, ask 
 ---
 ## ▶️ Overview video of features with POSTMAN Dump
 <a href="https://www.youtube.com/watch?v=hikVFM3YNbY&ab_channel=SIDDHARTHVERMA">
-<img width="1470" height="832" alt="Screenshot 2025-07-14 at 5 03 02 AM" src="https://github.com/user-attachments/assets/3acadfe8-d593-4df1-8824-94c731e8eb27" />
+<img width="2940" height="1664" alt="image" src="https://github.com/user-attachments/assets/37ef16ba-2a00-41ea-84b8-b5ab13f75b29" />
 </a>
+CLICK ON THE IMAGE TO PLAY THE VIDEO!!
 
 ___
 ## 📂 Project Structure
